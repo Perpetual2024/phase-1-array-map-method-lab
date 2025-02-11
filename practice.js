@@ -79,3 +79,19 @@ function getDuplicates(A){
     return [...new Set(A.filter(num => countMap.get(num) > 1))];
 }
 console.log(getDuplicates([1,2,3,4,5,1,2,3,6,7]))
+
+//Word Frequency Counter
+words = ["apple", "banana", "apple", "orange", "banana", "banana"];
+
+function wordFrequency(words){
+    let wordMap = new Map();
+
+
+    for (let word of words){
+        wordMap.set(word, (wordMap.get(word) || 0 ) + 1);
+    }
+
+    return wordMap;
+  
+}
+console.log(wordFrequency(words))
