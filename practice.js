@@ -95,3 +95,22 @@ function wordFrequency(words){
   
 }
 console.log(wordFrequency(words))
+
+//Most Frequent Word
+function mostFrequentWord(words){
+    let wordMap = new Map();
+    let maxCount = 0;
+    let mostFrequentWord = "";
+
+    for(let word of words){
+        wordMap.set(word, (wordMap.get(word) || 0) + 1 );
+
+        if (wordMap.get(word)> maxCount){
+            maxCount = wordMap.get(word);
+            mostFrequentWord = word;
+    }
+    
+}
+return mostFrequentWord;
+}
+console.log(mostFrequentWord(words))
