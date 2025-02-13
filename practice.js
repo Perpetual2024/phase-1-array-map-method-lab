@@ -72,7 +72,7 @@ function findDuplicates(A){
 }
 console.log(findDuplicates(A))
 
-//r alternatively using filter()
+//r alternatively using filter() to get all
 function getDuplicates(A){
     let countMap = new Map();
     A.forEach(num => countMap.set(num, (countMap.get(num) || 0) + 1));
@@ -114,3 +114,22 @@ function mostFrequentWord(words){
 return mostFrequentWord;
 }
 console.log(mostFrequentWord(words))
+//Alternatively returning all the most frequent words
+
+function mostFrequentWords(words) {
+    let wordMap = new Map();
+    let maxCount = 0;
+    
+    for (let word of words) {
+        wordMap.set(word, (wordMap.get(word) || 0) + 1);
+        maxCount = Math.max(maxCount, wordMap.get(word));
+    }
+
+    // Get all words with the highest frequency
+    return [...wordMap.keys()].filter(word => wordMap.get(word) === maxCount);
+}
+
+console.log(mostFrequentWords(["apple", "banana", "apple", "orange", "banana", "banana", "orange", "orange"]));
+
+let math = "11" - 1;
+console.log(math) 
